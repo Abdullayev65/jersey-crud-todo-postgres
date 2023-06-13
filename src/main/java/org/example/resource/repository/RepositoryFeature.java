@@ -18,8 +18,8 @@ public class RepositoryFeature implements Feature {
 
         @Override
         protected void configure() {
-            bindAsContract(CustomerRepository.class)
-                    .in(Singleton.class);
+//            bindAsContract(CustomerRepository.class)
+//                    .in(Singleton.class);
 
             bindAsContract(UserRepo.class)
                     .in(Singleton.class);

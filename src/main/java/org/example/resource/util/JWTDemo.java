@@ -47,11 +47,15 @@ public class JWTDemo {
 
     public static Integer decodeJWT(String jwt) {
 
-        //This line will throw an exception if it is not a signed JWS (as expected)
-        Claims claims = Jwts.parser()
-                .setSigningKey(DatatypeConverter.parseBase64Binary(SECRET_KEY))
-                .parseClaimsJws(jwt).getBody();
-        return Integer.valueOf(claims.getId());
+        try {
+            Claims claims = Jwts.parser()
+                    .setSigningKey(DatatypeConverter.parseBase64Binary(SECRET_KEY))
+                    .parseClaimsJws(jwt).getBody();
+
+            return Integer.valueOf(claims.getId());
+        } catch (Exception e) {
+            return null;
+        }
     }
 
 }
