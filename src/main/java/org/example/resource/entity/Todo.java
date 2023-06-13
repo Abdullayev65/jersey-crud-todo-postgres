@@ -2,11 +2,9 @@ package org.example.resource.entity;
 
 public class Todo {
     private Integer id;
-    private String task;
-    private Boolean done;
+    private String task = "";
+    private Boolean done = false;
     private Integer createdBy;
-
-
 
 
     public Integer getId() {

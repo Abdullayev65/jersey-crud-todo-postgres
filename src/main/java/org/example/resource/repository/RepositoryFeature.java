@@ -24,6 +24,9 @@ public class RepositoryFeature implements Feature {
             bindAsContract(UserRepo.class)
                     .in(Singleton.class);
 
+            bindAsContract(TodoRepo.class)
+                    .in(Singleton.class);
+
         }
     }
 }

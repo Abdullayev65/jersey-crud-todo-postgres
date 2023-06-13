@@ -2,6 +2,7 @@ package org.example.resource.controller;
 
 import org.example.resource.entity.User;
 import org.example.resource.repository.UserRepo;
+import org.example.resource.util.Consts;
 import org.example.resource.util.JWTDemo;
 
 import javax.inject.Inject;
@@ -84,7 +85,7 @@ public class UserCtrl {
     @GET
     @Path("me")
     @Produces(MediaType.APPLICATION_JSON)
-    public Response me(@HeaderParam("token") String token) {
+    public Response me(@HeaderParam(Consts.token) String token) {
         Integer userId = JWTDemo.decodeJWT(token);
         if (userId == null)
             return Response.status(400)
